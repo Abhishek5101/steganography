@@ -13,7 +13,7 @@ def decode_image(file_location):
     # To get RGB values for an image at X, Y:
     for i in range(x_size):
         for j in range(y_size):
-            if bin(red_channel.getpixel((i, j)))[-1] == '0':
+            if int(bin(red_channel.getpixel((i, j)))[-1]) == 0:
                 pixels[i, j] = (255, 255, 255)
             else:
                 pixels[i, j] = (0, 0, 0)
