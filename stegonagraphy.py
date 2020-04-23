@@ -15,9 +15,13 @@ def decode_image(file_location):
         for j in range(y_size):
             if int(bin(red_channel.getpixel((i, j)))[-1]) == 0:
                 pixels[i, j] = (255, 255, 255)
-            else:
+            elif int(bin(red_channel.getpixel((i, j)))[-1]) == 1:
                 pixels[i, j] = (0, 0, 0)
     decoded_image.save("decoded_image.png")
 
 
 decode_image("encoded_sample.png")
+
+
+def encode_image(text_to_encode):
+    pass
